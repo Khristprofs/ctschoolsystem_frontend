@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@layer components {
+  .form-card {
+    @apply bg-white rounded-2xl shadow-sm border border-gray-100;
+  }
+
+  .form-section {
+    @apply space-y-6;
+  }
+
+  .form-label {
+    @apply text-sm font-medium text-gray-700;
+  }
+
+  .form-input {
+    @apply w-full px-4 py-3 rounded-lg border border-gray-300
+    focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
+    transition;
+  }
+
+  .form-select {
+    @apply w-full px-4 py-3 rounded-lg border border-gray-300 bg-white
+    focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500;
+  }
+
+  .form-error {
+    @apply text-xs text-red-500 mt-1;
+  }
+}
