@@ -1,4 +1,4 @@
-import HeroImg from "../../assets/images/School1.webp";
+import HeroImg from "../../assets/images/school1.webp";
 import MissionImg from "../../assets/images/admitStudent.webp";
 
 const MissionAndPhilosophy = () => {
