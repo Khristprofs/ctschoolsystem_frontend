@@ -32,6 +32,29 @@ const Login = () => {
           navigate("/student");
           break;
 
+        case "Teacher":
+          navigate("/teacher");
+          break;
+        case "Principal":
+          navigate("/principal");
+          break;
+
+        case "Bursar":
+          navigate("/bursar");
+          break;
+
+        case "Headteacher":
+          navigate("/headteacher");
+          break;
+
+        case "Viceprincipal":
+          navigate("/vicePrincipal");
+          break;
+
+        case "Viceheadteacher":
+          navigate("/viceHeadteacher");
+          break;
+
         default:
           navigate("/");
       }

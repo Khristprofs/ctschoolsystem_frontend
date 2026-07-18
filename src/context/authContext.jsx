@@ -18,14 +18,11 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (credentials) => {
 
-    const response =
-      await loginUser(credentials);
+    const response = await loginUser(credentials);
 
-    const userData =
-      response.data.user;
+    const userData = response.data.user;
 
-    const accessToken =
-      response.data.accessToken;
+    const accessToken = response.data.accessToken;
 
     setUser(userData);
     setToken(accessToken);

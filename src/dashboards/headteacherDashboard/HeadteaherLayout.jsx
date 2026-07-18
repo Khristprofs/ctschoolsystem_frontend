@@ -1,14 +1,14 @@
-import StudentSidebar from "./Sidebar";
+import Sidebar from "./Sidebar";
 import Topbar from "./Topbar";
 import { Outlet } from "react-router-dom";
 
-const StudentLayout = () => {
+const HeadteacherLayout = () => {
   return (
     <div className="flex h-screen bg-gray-100 overflow-hidden">
-      <StudentSidebar />
+      <Sidebar />
       <div className="flex-1 flex flex-col">
         <Topbar />
-        <main className="flex-1 overflow-y-auto p-6">
+        <main className="ml-64 flex-1 overflow-y-auto p-6">
           <Outlet />
         </main>
       </div>
@@ -16,4 +16,4 @@ const StudentLayout = () => {
   );
 };
 
-export default StudentLayout;
+export default HeadteacherLayout;

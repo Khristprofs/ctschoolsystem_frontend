@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { getStudentDashboard } from "../../services/studentDashboardService";
+import { getParentDashboard } from "../../services/parentDashboardService";
 
-const StudentDashboardHome = () => {
-    const [student, setStudent] = useState(null);
+const ParentDashboardHome = () => {
+    const [parent, setParent] = useState(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -11,10 +11,10 @@ const StudentDashboardHome = () => {
 
     const loadData = async () => {
         try {
-            const res = await getStudentDashboard();
+            const res = await getParentDashboard();
 
             if (res.success) {
-                setStudent(res.data.student);
+                setParent(res.data.student);
             }
         } catch (error) {
             console.error(error);
@@ -38,9 +38,9 @@ const StudentDashboardHome = () => {
                 <h1 className="text-3xl font-bold">
                     Welcome Back,
                     {" "}
-                    {student?.lastname}
+                    {parent?.lastname}
                 </h1>
-                <p className="mt-2 text-blue-100">Here's an overview of your academic profile.</p>
+                <p className="mt-2 text-blue-100">Here's an overview of your profile.</p>
             </div>
 
             <div className="grid grid-cols-1 xl:grid-cols-4 gap-6 items-start">
@@ -51,7 +51,7 @@ const StudentDashboardHome = () => {
                         <div className="relative">
                             <img
                                 src={
-                                    student?.profile?.img ||
+                                    parent?.profile?.img ||
                                     "https://plus.unsplash.com/premium_photo-1681505220220-410658c008da?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c2Vjb25kYXJ5JTIwc2Nob29sJTIwc3R1ZGVudCUyMGltYWdlfGVufDB8fDB8fHww"
                                 }
                                 alt="profile"
@@ -62,65 +62,25 @@ const StudentDashboardHome = () => {
                         </div>
 
                         <h2 className="mt-5 text-2xl font-bold text-slate-800 leading-tight">
-                            {student?.fullname}
+                            {parent?.fullname}
                         </h2>
 
                         <span className="mt-2 inline-flex items-center rounded-full bg-blue-100 px-4 py-1 text-sm font-medium text-blue-700 capitalize">
-                            {student?.role}
+                            {parent?.role}
                         </span>
-
-                        <div className="w-full mt-6 border-t border-slate-200 pt-5 space-y-3 text-sm">
-
-                            <div className="flex justify-between">
-                                <span className="text-slate-500">Reg No</span>
-
-                                <span className="font-semibold text-slate-700 text-right break-all">
-                                    {student?.regNo || "-"}
-                                </span>
-                            </div>
-
-                            <div className="flex justify-between">
-                                <span className="text-slate-500">Class</span>
-
-                                <span className="font-semibold text-slate-700">
-                                    {student?.className || "N/A"}
-                                </span>
-                            </div>
-                        </div>
 
                     </div>
                 </div>
 
                 {/* Information Cards */}
                 <div className="xl:col-span-3 grid sm:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-4 gap-4 items-start">
-
-                    {/* Registration */}
-                    <div className="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 px-5 py-2.5 self-start">
-                        <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-400">
-                            Registration No
-                        </p>
-                        <h3 className="mt-1 text-lg font-bold text-slate-800 break-all">
-                            {student?.regNo || "-"}
-                        </h3>
-                    </div>
-
-                    {/* Class */}
-                    <div className="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 px-5 py-2.5 self-start">
-                        <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-400">
-                            Class
-                        </p>
-                        <h3 className="mt-1 text-lg font-bold text-slate-800">
-                            {student?.className || "Not Assigned"}
-                        </h3>
-                    </div>
-
                     {/* Phone */}
                     <div className="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 px-5 py-2.5 self-start">
                         <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-400">
                             Phone
                         </p>
                         <h3 className="mt-1 text-base font-semibold text-slate-800 break-all">
-                            {student?.phone || "-"}
+                            {parent?.phone || "-"}
                         </h3>
                     </div>
 
@@ -131,9 +91,9 @@ const StudentDashboardHome = () => {
                         </p>
                         <h3
                             className="mt-1 text-sm font-semibold text-slate-800 wrap-break-word"
-                            title={student?.email}
+                            title={parent?.email}
                         >
-                            {student?.email || "-"}
+                            {parent?.email || "-"}
                         </h3>
                     </div>
                     {/* Personal & Contact Information */}
@@ -153,27 +113,7 @@ const StudentDashboardHome = () => {
                                     </span>
 
                                     <span className="font-semibold text-slate-800">
-                                        {student?.profile?.DOB || "N/A"}
-                                    </span>
-                                </div>
-
-                                <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-                                    <span className="text-slate-500">
-                                        Admission Date
-                                    </span>
-
-                                    <span className="font-semibold text-slate-800">
-                                        {student?.profile?.dateOfAdmission || "N/A"}
-                                    </span>
-                                </div>
-
-                                <div className="flex items-center justify-between">
-                                    <span className="text-slate-500">
-                                        Graduation Year
-                                    </span>
-
-                                    <span className="font-semibold text-slate-800">
-                                        {student?.profile?.graduationYear || "N/A"}
+                                        {parent?.profile?.DOB || "N/A"}
                                     </span>
                                 </div>
 
@@ -194,7 +134,7 @@ const StudentDashboardHome = () => {
                                     </p>
 
                                     <p className="font-semibold text-slate-800 mt-1 leading-6">
-                                        {student?.address || "N/A"}
+                                        {parent?.address || "N/A"}
                                     </p>
                                 </div>
 
@@ -203,7 +143,7 @@ const StudentDashboardHome = () => {
                                         Contact Address
                                     </p>
                                     <p className="font-semibold text-slate-800 mt-1 leading-6">
-                                        {student?.profile?.contactAddress || "N/A"}
+                                        {parent?.profile?.contactAddress || "N/A"}
                                     </p>
                                 </div>
                             </div>
@@ -216,7 +156,7 @@ const StudentDashboardHome = () => {
                             About Me
                         </h2>
                         <p className="text-slate-600 leading-8">
-                            {student?.profile?.bio || "No bio available."}
+                            {parent?.profile?.bio || "No bio available."}
                         </p>
                     </div>
                 </div>
@@ -225,4 +165,4 @@ const StudentDashboardHome = () => {
     );
 };
 
-export default StudentDashboardHome;
+export default ParentDashboardHome;

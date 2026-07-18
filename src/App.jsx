@@ -69,7 +69,21 @@ import AssessmentView from "./dashboards/admindashboard/AssessmentView";
 import EditAssessment from "./dashboards/admindashboard/EditAssessment";
 import CreateAssessment from "./dashboards/admindashboard/CreateAssessment";
 import StudentLayout from "./dashboards/studentdashboard/StudentLayout";
-import StudentDashboardHome from "./dashboards/studentdashboard/DashboardHome"
+import StudentDashboardHome from "./dashboards/studentdashboard/DashboardHome";
+import TeacherLayout from "./dashboards/teacherdashboard/TeacherLayout";
+import TeacherDashboardHome from "./dashboards/teacherdashboard/DashboardHome";
+import PrincipalLayout from "./dashboards/principalDashboard/PrincipalLayout";
+import PrincipalDashboardHome from "./dashboards/principalDashboard/DashboardHome";
+import BursarLayout from "./dashboards/bursarDashboard/BursarLayout";
+import BursarDashboardHome from "./dashboards/bursarDashboard/DashboardHome";
+import HeadteacherLayout from "./dashboards/headteacherDashboard/HeadteaherLayout";
+import HeadteacherDashboardHome from "./dashboards/headteacherDashboard/DashboardHome";
+import ParentLayout from "./dashboards/parentdashboard/ParentLayout";
+import ParentDashboardHome from "./dashboards/parentdashboard/DashboardHome";
+import VicePrincipalLayout from "./dashboards/viceprincipal/VicePrincipalLayout";
+import VicePrincipalDashboardHome from "./dashboards/viceprincipal/DashboardHome";
+import ViceHeadteacherLayout from "./dashboards/viceheadteacher/ViceHeadteacherLayout";
+import ViceHeadteacherDashboardHome from "./dashboards/viceheadteacher/DashboardHome";
 
 function App() {
   return (
@@ -171,6 +185,96 @@ function App() {
         }
       >
         <Route index element={<StudentDashboardHome />} />
+      </Route>
+
+      <Route
+        path="/teacher"
+        element={
+          <ProtectedRoute
+            allowedRoles={["Teacher"]}
+          >
+            <TeacherLayout />
+          </ProtectedRoute>
+        }
+      >
+        <Route index element={<TeacherDashboardHome />} />
+      </Route>
+
+      <Route
+        path="/principal"
+        element={
+          <ProtectedRoute
+            allowedRoles={["Principal"]}
+          >
+            <PrincipalLayout />
+          </ProtectedRoute>
+        }
+      >
+        <Route index element={<PrincipalDashboardHome />} />
+      </Route>
+
+      <Route
+        path="/bursar"
+        element={
+          <ProtectedRoute
+            allowedRoles={["Bursar"]}
+          >
+            <BursarLayout />
+          </ProtectedRoute>
+        }
+      >
+        <Route index element={<BursarDashboardHome />} />
+      </Route>
+      <Route
+        path="/headteacher"
+        element={
+          <ProtectedRoute
+            allowedRoles={["Headteacher"]}
+          >
+            <HeadteacherLayout />
+          </ProtectedRoute>
+        }
+      >
+        <Route index element={<HeadteacherDashboardHome />} />
+      </Route>
+
+      <Route
+        path="/parent"
+        element={
+          <ProtectedRoute
+            allowedRoles={["Parent"]}
+          >
+            <ParentLayout />
+          </ProtectedRoute>
+        }
+      >
+        <Route index element={<ParentDashboardHome />} />
+      </Route>
+
+      <Route
+        path="/viceprincipal"
+        element={
+          <ProtectedRoute
+            allowedRoles={["VicePrincipal"]}
+          >
+            <ViceHeadteacherLayout />
+          </ProtectedRoute>
+        }
+      >
+        <Route index element={<VicePrincipalDashboardHome />} />
+      </Route>
+
+      <Route
+        path="/viceheadteacher"
+        element={
+          <ProtectedRoute
+            allowedRoles={["ViceHeadteacher"]}
+          >
+            <ViceHeadteacherLayout />
+          </ProtectedRoute>
+        }
+      >
+        <Route index element={<ViceHeadteacherDashboardHome />} />
       </Route>
     </Routes>
   );

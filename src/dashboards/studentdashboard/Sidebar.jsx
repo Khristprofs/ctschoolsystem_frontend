@@ -1,4 +1,4 @@
-import { Home, User, BookOpen, } from "lucide-react";
+import { Home, User, BookOpen, Table, ClipboardCheck, FileText, Coins, CreditCard } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
 const StudentSidebar = () => {
@@ -19,19 +19,55 @@ const StudentSidebar = () => {
                 </NavLink>
 
                 <NavLink
-                    to="/student/profile"
+                    to="/student/attendance"
                     className="flex items-center gap-3 p-3 rounded hover:bg-blue-800"
                 >
                     <User size={18} />
-                    Profile
+                    Attendance
+                </NavLink>
+                <NavLink
+                    to="/student/timetable"
+                    className="flex items-center gap-3 p-3 rounded hover:bg-blue-800"
+                >
+                    <Table size={18} />
+                    Timetable
                 </NavLink>
 
+                <NavLink
+                    to="/student/assessment"
+                    className="flex items-center gap-3 p-3 rounded hover:bg-blue-800"
+                >
+                    <ClipboardCheck size={18} />
+                    Assessment
+                </NavLink>
                 <NavLink
                     to="/student/results"
                     className="flex items-center gap-3 p-3 rounded hover:bg-blue-800"
                 >
                     <BookOpen size={18} />
                     Results
+                </NavLink>
+                <NavLink
+                    to="/student/reportcard"
+                    className="flex items-center gap-3 p-3 rounded hover:bg-blue-800"
+                >
+                    <FileText size={18} />
+                    Reportcard
+                </NavLink>
+                <NavLink
+                    to="/student/fees"
+                    className="flex items-center gap-3 p-3 rounded hover:bg-blue-800"
+                >
+                    <Coins size={18} />
+                    Fees
+                </NavLink>
+
+                <NavLink
+                    to="/student/payments"
+                    className="flex items-center gap-3 p-3 rounded hover:bg-blue-800"
+                >
+                    <CreditCard size={18} />
+                    Payments
                 </NavLink>
             </nav>
         </aside>
