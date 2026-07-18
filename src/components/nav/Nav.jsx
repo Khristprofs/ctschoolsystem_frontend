@@ -1,89 +1,195 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { Menu, X } from "lucide-react";
+
 import AdmissionDropdown from "./dropdown/AdmissionDropdown";
 import StudentLifeDropdown from "./dropdown/StudentLifeDropdown";
 import AcademicsDropdown from "./dropdown/AcademicsDropdown";
 import AboutDropdown from "./dropdown/AboutDropdown";
 import CommunityDropdown from "./dropdown/CommunityDropdown";
-import { Link } from "react-router-dom";
 
 const Nav = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
     return (
-        <header className="flex justify-between items-center shadow-md p-6 fixed top-0 w-full z-40 bg-white">
+        <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
 
-            <p className="font-extrabold font-mono uppercase text-xl">christthegreat</p>
-            <nav>
-                <ul className="flex gap-10 items-center font-medium">
-                    <li className="hover:text-blue-500 transition">
-                        <Link to="/">Home</Link>
-                    </li>
-                    <li className="relative group cursor-pointer text-gray-700 hover:text-blue-500 transition">
-                        <span className="select-none">About</span>
-                        <div className="absolute left-0 top-full h-4 w-full"></div>
-                        <div className="
-                            absolute left-0 top-full mt-4 
-                            opacity-0 group-hover:opacity-100 
-                            pointer-events-none group-hover:pointer-events-auto
-                            transition-all duration-200 ease-out delay-200
-                        ">
-                            <AboutDropdown />
-                        </div>
-                    </li>
-                    <li className="relative group cursor-pointer hover:text-blue-500 transition">
-                        <span className="select-none">Admission</span>
-                        <div className="absolute left-0 top-full h-4 w-full"></div>
-                        <div className="
-                            absolute left-0 top-full mt-4 
-                            opacity-0 group-hover:opacity-100 
-                            pointer-events-none group-hover:pointer-events-auto
-                            transition-all duration-200 ease-out delay-200
-                        ">
-                            <AdmissionDropdown />
-                        </div>
-                    </li>
-                    <li className="relative group cursor-pointer hover:text-blue-500 transition">
-                        <span className="select-none">Student Life</span>
-                        <div className="absolute left-0 top-full h-4 w-full"></div>
-                        <div className="
-                            absolute left-0 top-full mt-4 
-                            opacity-0 group-hover:opacity-100 
-                            pointer-events-none group-hover:pointer-events-auto
-                            transition-all duration-200 ease-out delay-200
-                        ">
-                            <StudentLifeDropdown />
-                        </div>
-                    </li>
-                    <li className="relative group cursor-pointer hover:text-blue-500 transition">
-                        <span className="select-none">Academics</span>
-                        <div className="absolute left-0 top-full h-4 w-full"></div>
-                        <div className="
-                            absolute left-0 top-full mt-4 
-                            opacity-0 group-hover:opacity-100 
-                            pointer-events-none group-hover:pointer-events-auto
-                            transition-all duration-200 ease-out delay-200
-                        ">
-                            <AcademicsDropdown />
-                        </div>
-                    </li>
-                    <li className="relative group cursor-pointer hover:text-blue-500 transition">
-                        <span className="select-none">Community</span>
-                        <div className="absolute left-0 top-full h-4 w-full"></div>
-                        <div className="
-                            absolute left-0 top-full mt-4 
-                            opacity-0 group-hover:opacity-100 
-                            pointer-events-none group-hover:pointer-events-auto
-                            transition-all duration-200 ease-out delay-200
-                        ">
-                            <CommunityDropdown />
-                        </div>
-                    </li>
-                    <li className="hover:text-blue-500 transition">
-                        <Link to="/login">Login</Link>
-                    </li>
+            <div className="max-w-7xl mx-auto flex items-center justify-between px-5 lg:px-8 py-4">
 
-                    <li className="hover:text-blue-500 transition">
-                        <Link to="/signup">SignUp</Link>
-                    </li>
-                </ul>
-            </nav>
+                {/* Logo */}
+                <Link
+                    to="/"
+                    className="font-extrabold text-lg md:text-xl uppercase font-mono"
+                >
+                    ChristTheGreat
+                </Link>
+
+                {/* Desktop Navigation */}
+                <nav className="hidden lg:block">
+                    <ul className="flex items-center gap-8 font-medium">
+
+                        <li>
+                            <Link
+                                to="/"
+                                className="hover:text-red-700 transition"
+                            >
+                                Home
+                            </Link>
+                        </li>
+
+                        <li className="relative group">
+                            <span className="cursor-pointer hover:text-red-700">
+                                About
+                            </span>
+
+                            <div className="absolute top-full mt-4 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition">
+                                <AboutDropdown />
+                            </div>
+                        </li>
+
+                        <li className="relative group">
+                            <span className="cursor-pointer hover:text-red-700">
+                                Admission
+                            </span>
+
+                            <div className="absolute top-full mt-4 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition">
+                                <AdmissionDropdown />
+                            </div>
+                        </li>
+
+                        <li className="relative group">
+                            <span className="cursor-pointer hover:text-red-700">
+                                Student Life
+                            </span>
+
+                            <div className="absolute top-full mt-4 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition">
+                                <StudentLifeDropdown />
+                            </div>
+                        </li>
+
+                        <li className="relative group">
+                            <span className="cursor-pointer hover:text-red-700">
+                                Academics
+                            </span>
+
+                            <div className="absolute top-full mt-4 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition">
+                                <AcademicsDropdown />
+                            </div>
+                        </li>
+
+                        <li className="relative group">
+                            <span className="cursor-pointer hover:text-red-700">
+                                Community
+                            </span>
+
+                            <div className="absolute top-full mt-4 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition">
+                                <CommunityDropdown />
+                            </div>
+                        </li>
+
+                        <li>
+                            <Link
+                                to="/login"
+                                className="hover:text-red-700 transition"
+                            >
+                                Login
+                            </Link>
+                        </li>
+
+                        <li>
+                            <Link
+                                to="/signup"
+                                className="bg-red-700 hover:bg-red-800 text-white px-5 py-2 rounded-lg"
+                            >
+                                Sign Up
+                            </Link>
+                        </li>
+
+                    </ul>
+                </nav>
+
+                {/* Mobile Menu Button */}
+                <button
+                    onClick={() => setIsOpen(!isOpen)}
+                    className="lg:hidden"
+                >
+                    {isOpen ? (
+                        <X size={30} />
+                    ) : (
+                        <Menu size={30} />
+                    )}
+                </button>
+
+            </div>
+
+            {/* Mobile Menu */}
+            {isOpen && (
+                <div className="lg:hidden bg-white shadow-md border-t">
+
+                    <nav className="flex flex-col p-6 space-y-5">
+
+                        <Link
+                            to="/"
+                            onClick={() => setIsOpen(false)}
+                        >
+                            Home
+                        </Link>
+
+                        <Link
+                            to="/about"
+                            onClick={() => setIsOpen(false)}
+                        >
+                            About
+                        </Link>
+
+                        <Link
+                            to="/admission"
+                            onClick={() => setIsOpen(false)}
+                        >
+                            Admission
+                        </Link>
+
+                        <Link
+                            to="/student-life"
+                            onClick={() => setIsOpen(false)}
+                        >
+                            Student Life
+                        </Link>
+
+                        <Link
+                            to="/academics"
+                            onClick={() => setIsOpen(false)}
+                        >
+                            Academics
+                        </Link>
+
+                        <Link
+                            to="/community"
+                            onClick={() => setIsOpen(false)}
+                        >
+                            Community
+                        </Link>
+
+                        <Link
+                            to="/login"
+                            onClick={() => setIsOpen(false)}
+                        >
+                            Login
+                        </Link>
+
+                        <Link
+                            to="/signup"
+                            onClick={() => setIsOpen(false)}
+                            className="bg-red-700 text-white py-3 rounded-lg text-center"
+                        >
+                            Sign Up
+                        </Link>
+
+                    </nav>
+
+                </div>
+            )}
+
         </header>
     );
 };

@@ -18,8 +18,8 @@ function Home() {
     }, [images.length]);
 
     return (
-        <main className="w-full mt-19">
-            <section className="relative w-full h-screen overflow-hidden">
+        <main className="w-full pt-20">
+            <section className="relative w-full min-h-screen overflow-hidden">
                 <div
                     className="flex transition-transform duration-1500ms ease-in-out h-full"
                     style={{
@@ -42,30 +42,101 @@ function Home() {
                         ))
                     }
                 </div>
-                <div className="absolute inset-0 z-10 flex flex-col text-white">
-                    <div>
-                        <h1 className="text-5xl md:text-6xl font-bold drop-shadow-lg mb-4 w-4xl mt-30 px-20">
-                            Christ the Great Nursery, Primary and Secondary School AI
+                <div className="absolute inset-0 bg-black/40 flex items-center">
+
+                    <div className="max-w-7xl mx-auto w-full px-6">
+
+                        <h1 className="
+            text-3xl
+            sm:text-4xl
+            md:text-5xl
+            lg:text-6xl
+            font-bold
+            leading-tight
+            max-w-4xl
+        ">
+                            Christ the Great Nursery,
+                            Primary and Secondary School
                         </h1>
-                        <div className="flex flex-row gap-56 px-22">
-                            <p className="text-2xl max-w-2xl font-serif pt-2"
-                            >Where learning is made easy, morals, hard work, obedience is inculcated in students. We strive to providing quality education and conducive environment for learning.</p>
-                            <div className="text-2xl md:text-3xl bg-black/60 w-6xl px-4 -mr-24 pt-2 rounded-l-2xl">
-                                <p className="font-sans">Join a growing community</p>
-                                <p className="text-red-700 font-bold">Over 240,000+</p>
-                                <p className="italic">Graduates</p>
+
+                        <div className="
+            mt-8
+            flex
+            flex-col
+            lg:flex-row
+            gap-10
+            items-start
+        ">
+
+                            <p className="
+                text-base
+                sm:text-lg
+                md:text-xl
+                max-w-xl
+            ">
+                                Where learning is made easy, morals, hard work,
+                                obedience is inculcated in students. We strive to
+                                provide quality education in a conducive learning
+                                environment.
+                            </p>
+
+                            <div className="
+                bg-black/60
+                rounded-xl
+                p-6
+                text-center
+                w-full
+                lg:w-80
+            ">
+
+                                <p className="text-lg">
+                                    Join a growing community
+                                </p>
+
+                                <h2 className="text-4xl font-bold text-red-600">
+                                    240,000+
+                                </h2>
+
+                                <p>Graduates</p>
+
                             </div>
+
                         </div>
-                    </div>
-                    <div className="pl-20 -mt-14">
-                        <p className="text-xl mb-6 mt-20 font-mono">Find your level:</p>
-                        <div className="flex gap-4 flex-row text-lg font-sans font-bold">
-                            <button className="bg-red-800 px-10 py-3 rounded-2xl cursor-pointer hover:bg-red-900">Nursery</button>
-                            <button className="bg-red-800 px-10 py-3 rounded-2xl cursor-pointer hover:bg-red-900">Primary</button>
-                            <button className="bg-red-800 px-10 py-3 rounded-2xl cursor-pointer hover:bg-red-900">Junior Secondary</button>
-                            <button className="bg-red-800 px-10 py-3 rounded-2xl cursor-pointer hover:bg-red-900">Senior Secondary</button>
+
+                        <div className="mt-10">
+
+                            <p className="mb-5 text-lg">
+                                Find your level
+                            </p>
+
+                            <div className="
+                flex
+                flex-wrap
+                gap-4
+            ">
+
+                                <button className="bg-red-700 px-6 py-3 rounded-xl">
+                                    Nursery
+                                </button>
+
+                                <button className="bg-red-700 px-6 py-3 rounded-xl">
+                                    Primary
+                                </button>
+
+                                <button className="bg-red-700 px-6 py-3 rounded-xl">
+                                    Junior Secondary
+                                </button>
+
+                                <button className="bg-red-700 px-6 py-3 rounded-xl">
+                                    Senior Secondary
+                                </button>
+
+                            </div>
+
                         </div>
+
                     </div>
+
                 </div>
             </section>
         </main>
