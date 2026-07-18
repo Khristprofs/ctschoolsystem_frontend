@@ -1,6 +1,6 @@
 import React from "react";
 import HeroImage from "../../assets/images/teacher.avif"; 
-import administrationImg from "../../assets/images/administration.avif"
+import administrationImg from "../../assets/images/Administration.avif"
 import headtecherImg from "../../assets/images/head.avif";
 import bursarImg from "../../assets/images/man.avif";
 import vicePrincipalImg from "../../assets/images/viceprin.avif";
